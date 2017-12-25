@@ -9,11 +9,14 @@
 
 using namespace std;
 
+#if 0
 #ifndef _MATLAB
 	bool OpticalFlow::IsDisplay=true;
 #else
 	bool OpticalFlow::IsDisplay=false;
 #endif
+#endif
+        bool OpticalFlow::IsDisplay = false;
 
 //OpticalFlow::InterpolationMethod OpticalFlow::interpolation = OpticalFlow::Bicubic;
 OpticalFlow::InterpolationMethod OpticalFlow::interpolation = OpticalFlow::Bilinear;
@@ -843,8 +846,8 @@ void OpticalFlow::estLaplacianNoise(const DImage& Im1,const DImage& Im2,Vector<d
 	{
 		if(total[k]==0)
 		{
-			cout<<"All the pixels are invalid in estimation Laplacian noise!!!"<<endl;
-			cout<<"Something severely wrong happened!!!"<<endl;
+			// cout<<"All the pixels are invalid in estimation Laplacian noise!!!"<<endl;
+			// cout<<"Something severely wrong happened!!!"<<endl;
 			para[k] = 0.001;
 		}
 		else
